@@ -11,6 +11,23 @@ I decided not to use any existing machine learning frameworks for this project, 
 The AI learns by playing the level over and over until the flagpole is reached. Attempts are divided into generations, with each generation containing 30 attempts.
 For this algorithm, each move has a
 
+
+Each frame, the AI randomly chooses a move.
+The available moves are:
+
+* Do nothing,
+
+* Move right,
+
+* Move right and press A,
+
+* Move right and press B,
+
+* Move right and press A and B
+
+A button jumps, B button makes Mario run instead of walk.
+
+
 ## Generation 0
 Does random moves, lays the foundation for the AI to learn and improve from
 
