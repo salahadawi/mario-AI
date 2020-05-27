@@ -40,7 +40,16 @@ A button jumps, B button makes Mario run instead of walk.
 To speed up the learning process, several optimizations were made.
 
 ### Terminating agents early
-A problem that quickly came up was that many runs had the agent stuck, repeating the same actions over and over again such as trying to jump over a tall pipe, without any results. To avoid wasting time with agents that most likely will not make progress for the rest of their run, a fitness counter was implemented. If the agent does not make any progress in fitness for a specified amount of frames, the run will terminate prematurely.
+A problem that quickly came up was that many runs had the agent stuck, repeating the same actions over and over again such as trying to jump over a tall pipe, without any results. 
+
+To avoid wasting time with agents that most likely will not make progress for the rest of their run, a fitness counter was implemented. If the agent does not make any progress in fitness for a specified amount of frames, the run will terminate prematurely.
+
+For this model, the limit has been set to 100 moves without progress.
+
+### Controlled mutation
+With an unrestricted mutation, each action had an equal chance of being mutated. This often caused the agent to get stuck in obstacles it had already previously been able to clear. While this can also be an advantage in some cases, for example changing a part of the run to be more efficient, the downside of causing many agents to fail led to an overall increase in learning time.
+
+To avoid having agents repeat previous mistakes, only the last x% of moves can be set as mutable. For this model, the mutable percent has been set to 20%. This means that the first %80 of moves will always be the same, with the remaining 20% being mutable.
 
 ## Generation 0
 The AI starts its learning process from generation 0. Having no previous input to work with, the AI attempts to complete the level by doing random actions each frame. Once 30 attempts have been made and the generation is over, the sequence of inputs that ac
