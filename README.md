@@ -1,4 +1,7 @@
 <h1 align="center">Mario AI</h1>
+<p align="center">
+    <img src="https://github.com/salahadawi/mario-AI/blob/master/images/mario_flag_get.gif">
+</p>
 This genetic algorithm learns through trial and error to complete levels from Super Mario Bros. During testing, completion of level 1-1 was achieved in around 30 minutes when starting from scratch.
 
 ## How does it work?
