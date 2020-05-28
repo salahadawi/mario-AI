@@ -31,7 +31,9 @@ The available actions are:
 
 A button jumps, B button makes Mario run instead of walk.
 
-For this algorithm, each action has an equal probability of being chosen. Before an agents run starts, a list of moves it will perform is built. For generation 0, this list will contain random actions. For following generations, the list will contain a slightly mutated version of a previous agents moves.
+I decided to not allow the agent to move left, as this would most likely never be beneficial and only result in longer learning times.
+
+For this algorithm, each action has an equal probability of being chosen. Before an agents run starts, a list of actions it will perform is built. For generation 0, this list will contain random actions. For following generations, the list will contain a slightly mutated version of a previous agents moves.
 
 <h2 align="center">Optimizations</h2>
 To speed up the learning process, several optimizations were made.
