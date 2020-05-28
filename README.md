@@ -31,9 +31,15 @@ The available actions are:
 
 A button jumps, B button makes Mario run instead of walk.
 
-I decided to not allow the agent to move left, as this would most likely never be beneficial and only result in longer learning times.
+I decided to not allow the agent to move left, as this would almost never be beneficial and only result in longer learning times.
 
-For this algorithm, each action has an equal probability of being chosen. Before an agents run starts, a list of actions it will perform is built. For generation 0, this list will contain random actions. For following generations, the list will contain a slightly mutated version of a previous agents moves.
+Each action has an equal probability of being chosen. Before an agents run starts, a list of actions it will perform is built. For generation 0, this list will contain random actions. For following generations, the list will contain a slightly mutated version of the previous generations highest scoring agent.
+
+### Mutation
+
+Starting from generation 1, each agents action-set will contain random mutations. Actions that have been selected for mutation will be replaced with a random action.
+
+This allows the agents to "evolve" by attempting to solve the level in a slightly different way. With enough attemps, some of these mutations will result in an increase in fitness, and the next generation of agents will learn these traits and further improve on them.
 
 <h2 align="center">Optimizations</h2>
 To speed up the learning process, several optimizations were made.
@@ -46,9 +52,9 @@ To avoid wasting time with agents that most likely will not make progress for th
 For this model, the limit has been set to 100 moves without progress.
 
 ### Controlled mutation
-With an unrestricted mutation, each action had an equal chance of being mutated. This often caused the agent to get stuck in obstacles it had already previously been able to clear. While this can also be an advantage in some cases, for example changing a part of the run to be more efficient, the downside of causing many agents to fail led to an overall increase in learning time.
+With an unrestricted mutation, each action had an equal chance of being mutated. This often caused the agent to get stuck in obstacles it had already previously been able to clear. While unrestricted mutation can be an advantage in some cases, for example changing a part of the run to be more efficient, the downside of causing many agents to fail led to an overall increase in learning time.
 
-To avoid having agents repeat previous mistakes, only the last x% of moves can be set as mutable. For this model, the mutable percent has been set to 20%. This means that the first %80 of moves will always be the same, with the remaining 20% being mutable.
+To avoid having agents repeat previous mistakes, only the last x% of moves can be set as mutable. For this model, the mutable percent has been set to 20%. This means that the first 80% of moves will always be the same, with the remaining 20% being mutable.
 
 ## Generation 0
 The AI starts its learning process from generation 0. Having no previous input to work with, the AI attempts to complete the level by doing random actions each frame. Once 30 attempts have been made and the generation is over, the sequence of inputs that ac
