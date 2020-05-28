@@ -6,22 +6,17 @@ This genetic algorithm learns through trial and error to complete levels from Su
 
 <h2 align="center">How does it work?</h2>
 
-The algorithm was built with python. Super Mario Bros was emulated with the [OpenAI Gym](https://github.com/openai/gym) enviroment [gym-super-mario-bros](https://github.com/Kautenja/gym-super-mario-bros).
+The algorithm was built with Python. Super Mario Bros was emulated with the [OpenAI Gym](https://github.com/openai/gym) enviroment [gym-super-mario-bros](https://github.com/Kautenja/gym-super-mario-bros).
 
 I decided not to use any existing machine learning frameworks for this project, and instead opted to create my own genetic algorithm from scratch. As Super Mario Bros levels are predictable and contain no randomness, image recognition was not necessary for a successful algorithm.
 
 <h2 align="center">How does it learn?</h2>
 
-The AI learns by playing the level over and over until the flagpole is reached. Attempts are divided into generations, with each generation containing 30 attempts. Each attempt is called an [agent](https://en.wikipedia.org/wiki/Software_agent). Each agent is given a fitness score, corresponding to how far right the agent was able to move in the level.
+The AI learns by playing the level over and over until the flagpole is reached. Attempts are divided into generations, with each generation containing a specified amount of attempts. Each attempt is called an [agent](https://en.wikipedia.org/wiki/Software_agent). Each agent is given a fitness score at the end of their runs, corresponding to how far right the agent was able to move in the level.
 
 Once each agent from a generation has completed its run, the agent with the highest fitness score is chosen, and the next generation of agents will base their actions of the chosen agents moves.
 
-As level 1-1 does not contain any dead-ends, i decided to make only a select percent of actions
-
-For this algorithm, each move has a
-
-
-Each frame, the AI randomly chooses an action.
+### Actions
 The available actions are:
 
 * Do nothing
@@ -35,6 +30,8 @@ The available actions are:
 * Move right and press A and B
 
 A button jumps, B button makes Mario run instead of walk.
+
+For this algorithm, each action has an equal probability of being chosen. Before an agents run starts, a list of moves it will perform is built. For generation 0, this list will contain random actions. For following generations, the list will contain a slightly mutated version of a previous agents moves.
 
 <h2 align="center">Optimizations</h2>
 To speed up the learning process, several optimizations were made.
