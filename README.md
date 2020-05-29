@@ -23,13 +23,11 @@ The available actions are:
 
 * Move right
 
-* Move right and press A
+* Move right and jump
 
-* Move right and press B
+* Move right and run
 
-* Move right and press A and B
-
-A button jumps, B button makes Mario run instead of walk.
+* Move right, run and jump
 
 I decided to not allow the agent to move left, as this would almost never be beneficial and only result in longer learning times.
 
