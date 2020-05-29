@@ -12,7 +12,7 @@ I decided not to use any existing machine learning frameworks for this project, 
 
 <h2 align="center">How does it learn?</h2>
 
-The AI learns by playing the level over and over until the flagpole is reached. Attempts are divided into generations, with each generation containing a specified amount of attempts. Each attempt is called an [agent](https://en.wikipedia.org/wiki/Software_agent). Each agent is given a fitness score at the end of their runs, corresponding to how far right the agent was able to move in the level.
+The AI learns by creating [agents](https://en.wikipedia.org/wiki/Software_agent) that play the level over and over until the flagpole is reached. Attempts are divided into generations, with each generation containing a specified amount of agents. Each agent is given a fitness score at the end of their run, corresponding to how far right the agent was able to move in the level.
 
 Once each agent from a generation has completed its run, the agent with the highest fitness score is chosen, and the next generation of agents will base their actions of the chosen agents moves.
 
