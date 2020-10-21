@@ -53,18 +53,3 @@ For this model, the limit has been set to 100 moves without progress.
 With an unrestricted mutation, each action had an equal chance of being mutated. This often caused the agent to get stuck in obstacles it had already previously been able to clear. While unrestricted mutation can be an advantage in some cases, for example changing a part of the run to be more efficient, the downside of causing many agents to fail led to an overall increase in learning time.
 
 To avoid having agents repeat previous mistakes, only the last x% of moves can be set as mutable. For this model, the mutable percent has been set to 20%. This means that the first 80% of moves will always be the same, with the remaining 20% being mutable.
-
-## Generation 0
-The AI starts its learning process from generation 0. Having no previous input to work with, the AI attempts to complete the level by doing random actions each frame. Once 30 attempts have been made and the generation is over, the sequence of inputs that ac
-Does random moves, lays the foundation for the AI to learn and improve from
-
-## Generations 1-5
-Gets stuck at pipe
-
-## Generations 5-10
-Gets stuck at other pipe
-
-## Generations 15-20
-Gets over most difficult pipes, learns to beat level
-
-## Why?
